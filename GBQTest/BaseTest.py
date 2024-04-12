@@ -8,6 +8,7 @@ os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/home/gaian/Downloads/case16370-
 # Initialize BigQuery client
 client = bigquery.Client()
 
+
 # Define the query to execute
 query = """
     SELECT *

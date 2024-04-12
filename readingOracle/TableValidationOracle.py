@@ -15,6 +15,7 @@ def table_exists(db_name, schema_name, table_name):
   conn = cx_Oracle.connect(user='PRASANNA$#_', password='1nt3grat10n', dsn=dsn)
   cur = conn.cursor()
 
+
   query = f"""
   SELECT EXISTS (
       SELECT 1

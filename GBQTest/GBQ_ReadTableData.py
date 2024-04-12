@@ -9,6 +9,7 @@ query = """select * from case16370.babynames.DATAPROD729_FEW"""
 
 result = client.query(query)
 
+
 result_df = result.result().to_dataframe()
 
 print(result_df)
