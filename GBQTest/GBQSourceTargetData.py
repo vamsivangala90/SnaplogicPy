@@ -1,6 +1,4 @@
 import os
-
-import google.cloud.client
 from google.cloud import bigquery
 import pandas as pd
 # Define the source and target tables
