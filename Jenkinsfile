@@ -1,11 +1,12 @@
 pipeline {
     agent any
+    environment {
+        // Define environment variables for your virtual environment if needed
+    }
     stages {
-        stage('Install Dependencies') {
+        stage('Activate Virtual Environment') {
             steps {
-                sh 'pip install google-api-python-client'
-                sh 'pip install google.cloud'
-                sh 'pip install pip install snowflake-connector-python'// Or the specific library name if different
+                sh 'source /home/gaian/PycharmProjects/pythonProject/.venv/bin/activate'  // Replace with your virtual environment activation command
             }
         }
         // ... other stages
