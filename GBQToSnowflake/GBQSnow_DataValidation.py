@@ -6,16 +6,16 @@ import snowflake.connector
 
 def get_bigquery_data(query, credentials_path):
     # Authenticate with BigQuery using service account key
-    client = bigquery.Client.from_service_account_json(credentials_path)
+    bigqueryauth = bigquery.Client.from_service_account_json(credentials_path)
 
     # Run the query and convert the result to a pandas DataFrame
-    df_bigquery = client.query(query).to_dataframe()
+    df_bigquery = bigqueryauth.query(query).to_dataframe()
     return df_bigquery
 
 
 def get_snowflake_data(query, snowflake_connection_params):
     # Connect to Snowflake
-    conn = snowflake.connector.connect(
+    snowflakeauth = snowflake.connector.connect(
         user=snowflake_connection_params['user'],
         password=snowflake_connection_params['password'],
         account=snowflake_connection_params['account'],
@@ -24,10 +24,10 @@ def get_snowflake_data(query, snowflake_connection_params):
     )
 
     # Run the query and convert the result to a pandas DataFrame
-    cursor = conn.cursor()
-    cursor.execute(query)
-    df_snowflake = pd.DataFrame(cursor.fetchall(), columns=[desc[0] for desc in cursor.description])
-    conn.close()
+    cursorobject = snowflakeauth.cursor()
+    cursorobject.execute(query)
+    df_snowflake = pd.DataFrame(cursorobject.fetchall(), columns=[desc[0] for desc in cursorobject.description])
+    snowflakeauth.close()
     return df_snowflake
 
 
@@ -67,7 +67,6 @@ def main():
         print(diff)
     else:
         print("No differences found. Data is consistent between BigQuery and Snowflake.")
-
 
 if __name__ == "__main__":
     main()
