@@ -1,0 +1,14 @@
+pipeline {
+   agent any
+    environment {
+        // Define environment variables for your virtual environment if needed
+    }
+    stages {
+        stage('Activate Virtual Environment') {
+            steps {
+                sh 'source /home/gaian/PycharmProjects/pythonProject/.venv/bin/activate'  // Replace with your virtual environment activation command
+            }
+        }
+        // ... other stages
+    }
+}
