@@ -17,7 +17,6 @@ Target_query = "select nSTRING,nBYTES,nINTEGER,NFLOAT from `case16370.DATAPROD72
 source_df = client.query(Source_query).to_dataframe()
 target_df = client.query(Target_query).to_dataframe()
 
-
 # Compare the dataframes using pandas
 def compare_dataframes(df1, df2):
     # Compare the dataframes using `merge` with an inner join on all columns
