@@ -72,5 +72,6 @@ def main():
         print("No differences found. Data is consistent between BigQuery and Snowflake.")
 
 
+
 if __name__ == "__main__":
     main()
