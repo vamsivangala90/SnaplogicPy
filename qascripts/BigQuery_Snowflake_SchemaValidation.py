@@ -61,6 +61,7 @@ def main():
     # Compare dataframes
     diff = compare_dataframes(df_bigquery, df_snowflake)
 
+
     # Print the differences, if any
     if not diff.empty:
         print(df_bigquery)
