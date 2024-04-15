@@ -1,0 +1,28 @@
+-- ETL Queries for Target
+
+Bigquery:
+========
+Table Exists
+------------
+SELECT table_name FROM `project.dataset.INFORMATION_SCHEMA.TABLES`
+WHERE table_name = 'tablename' AND table_type = 'BASE TABLE';
+
+Duplicate rows
+--------------
+SELECT
+    column1, column2,
+    COUNT(*) AS count
+FROM
+    `project.dataset.table`
+GROUP BY
+    column1, column2
+HAVING
+    COUNT(*) > 1;
+
+Column is null
+--------------
+SELCT * FROM `project.dataset.table` WHERE COL IS NULL
+
+
+Snowflake:
+=========
