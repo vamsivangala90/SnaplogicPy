@@ -1,6 +1,7 @@
 import pandas as pd
 from google.cloud import bigquery
 import snowflake.connector
+import s3fs
 def get_bigquery_data(query, credentials_path):
     client = bigquery.Client.from_service_account_json(credentials_path)
     df_bigquery = client.query(query).to_dataframe()

@@ -49,7 +49,6 @@ def compare_dataframes(df_bigquery, df_snowflake):
 
 
 def main():
-    # BigQuery query and credentials path
     bigquery_query = "SELECT * FROM `case16370.babynames.DATAPROD729_FEW_NEW`"
     bigquery_credentials_path = "/home/gaian/Downloads/case16370-5b90ae0ebce9.json"
 
