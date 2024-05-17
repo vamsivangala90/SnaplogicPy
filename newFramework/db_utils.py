@@ -47,6 +47,7 @@ def get_connection(database_type):
         raise ValueError("Unsupported database type: {}".format(database_type))
 
 
+
 def execute_query(query, connection):
   """
   Executes a provided SQL query on the established connection.
