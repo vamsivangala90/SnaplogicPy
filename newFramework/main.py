@@ -13,7 +13,7 @@ query2 = input("Enter query for database 2: ")
 comparison_data = compare_data(database_type1, query1, database_type2, query2)
 
 # Generate timestamp for filename
-#wertyujiko
+
 now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")  # Format timestamp (YYYY-MM-DD_HH-MM-SS)
 output_filename = f"data_comparison_{now}.csv"
 
