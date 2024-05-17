@@ -41,7 +41,7 @@ def get_connection(database_type):
         except Exception as e:
             logging.error(f"Error connecting to Snowflake: {e}")
             raise ConnectionError(f"Error connecting to Snowflake: {e}")
-#below check is it is not both GBQ or snowflake
+#below check is it is not both GBQ or snowflakes
     else:
         logging.error("Unsupported database type: {}".format(database_type))
         raise ValueError("Unsupported database type: {}".format(database_type))
