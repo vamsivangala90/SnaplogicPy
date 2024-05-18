@@ -1,30 +1,35 @@
 name: CI
 
-on: [push, pull_request]
+on: [push, pull_request]  # Run on push and pull request events
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Run on Ubuntu latest runner
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2  # Checkout code from repository
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.8'
+      - name: Set up Python
+        uses: actions/setup-python@v2  # Set up Python environment
+        with:
+          python-version: '3.8'  # Specify Python version (adjust if needed)
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      - name: Install dependencies
+        run: |  # Choose one option based on your project requirements
+          python -m pip install --upgrade pip
+          pip install --upgrade Flask Werkzeug  # Upgrade Flask and Werkzeug
 
-    - name: Run tests
-      run: |
-        pytest
+    #  - name: Install dependencies (Option 2: Use urllib.parse.quote)  # Uncomment if upgrade not feasible
+        # run: |  # Uncomment these lines if you cannot upgrade Flask and Werkzeug
+        #   python -m pip install --upgrade pip
+        #   pip install -r requirements.txt  # Install requirements from a separate file (if applicable)
 
-    - name: Lint code
-      run: |
-        pip install flake8
-        flake8 .
+      - name: Run tests
+        run: |
+          pytest  # Run tests using pytest
+
+      - name: Lint code
+        run: |
+          pip install flake8  # Install flake8 for code linting
+          flake8 .  # Run flake8 linting
