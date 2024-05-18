@@ -10,6 +10,6 @@ pytest-flask==1.2.0
 
 # Linting
 flake8==3.9.2
-
+#
 # Other dependencies
 SQLAlchemy==1.4.22
