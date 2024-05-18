@@ -70,7 +70,7 @@ def main():
 
     # Compare dataframes
     diff = compare_dataframes(df_bigquery, df_snowflake)
-
+#
     # Print the differences, if any
     if not diff.empty:
         print(df_bigquery)
@@ -84,6 +84,7 @@ def main():
     else:
         print("No differences found. Data is consistent between BigQuery and Snowflake.")
 
+#qwerty
 
 if __name__ == "__main__":
     main()
