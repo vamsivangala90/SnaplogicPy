@@ -1,0 +1,15 @@
+# Web framework
+flask==2.0.3
+
+# HTTP library
+requests==2.25.1
+
+# Testing frameworks
+pytest==6.2.4
+pytest-flask==1.2.0
+
+# Linting
+flake8==3.9.2
+
+# Other dependencies
+SQLAlchemy==1.4.22
